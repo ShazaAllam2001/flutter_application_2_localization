@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class AddToCart extends StatefulWidget {
   const AddToCart({super.key});
@@ -9,11 +10,11 @@ class AddToCart extends StatefulWidget {
 
 class AddToCartState extends State<AddToCart> {
   final List<String> productImages = [
-    'assets/dress.jpg',
-    'assets/camera.jpg',
-    'assets/phone.jpg',
-    'assets/shirt.jfif',
-    'assets/pants.jfif',
+    'assets/images/dress.jpg',
+    'assets/images/camera.jpg',
+    'assets/images/phone.jpg',
+    'assets/images/shirt.jfif',
+    'assets/images/pants.jfif',
   ];
 
   void _showSnackbar(String message, BuildContext context) {
@@ -48,7 +49,7 @@ class AddToCartState extends State<AddToCart> {
                 Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Text(
-                    'Product ${index + 1}', 
+                    tr("product") + (index + 1).toString(), 
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -57,7 +58,7 @@ class AddToCartState extends State<AddToCart> {
                   flex: 2,
                   child: ElevatedButton(
                     onPressed: () {
-                      _showSnackbar('Item added to the cart', context);
+                      _showSnackbar(tr("item_added"), context);
                     },   
                     child:  
                       Icon(

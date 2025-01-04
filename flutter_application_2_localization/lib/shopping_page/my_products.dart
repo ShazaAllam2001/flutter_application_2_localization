@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MyProducts extends StatefulWidget {
   const MyProducts({super.key});
@@ -17,7 +18,7 @@ class MyProductsState extends State<MyProducts> {
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: Text(
-            'Our Products', // 'Our Products' Text
+            tr("products"), // 'Our Products' Text
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
@@ -27,9 +28,9 @@ class MyProductsState extends State<MyProducts> {
           height: 200,
             child: PageView(
               children: [
-                Image.asset('assets/butter.jpeg', fit: BoxFit.cover),
-                Image.asset('assets/phone.jpg', fit: BoxFit.cover),
-                Image.asset('assets/camera.jpg', fit: BoxFit.cover),
+                Image.asset('assets/images/butter.jpeg', fit: BoxFit.cover),
+                Image.asset('assets/images/phone.jpg', fit: BoxFit.cover),
+                Image.asset('assets/images/camera.jpg', fit: BoxFit.cover),
               ]
             ),
         ),

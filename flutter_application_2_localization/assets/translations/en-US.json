@@ -1,0 +1,26 @@
+{
+    "app_bar_title": "Shopping App",
+
+    "full_name_title": "Full Name",
+    "full_name_required": "Full Name is required",
+    "full_name_error": "First Character of Full Name should be Capital",
+    "email_title": "Email",
+    "email_required": "Email is required",
+    "email_error": "Enter a valid Email Address",
+    "password_title": "Password",
+    "password_required": "Password is required",
+    "password_error": "Password should be at least 6 characters",
+    "confirm_password_title": "Confirm Password",
+    "confirm_password_required": "Confirm Password is required",
+    "confirm_password_error": "Passwords should be identical",
+    "sign_up": "Sign Up",
+    "create_account": "Account created successfully",
+    "close": "Close",
+    "error_input": "Error in input fields",
+
+    "products": "Our Products",
+    "product": "Product",
+    "item_added": "Item added to the cart",
+    "offers": "Offer",
+    "hot_offers": "Hot Offers"
+}

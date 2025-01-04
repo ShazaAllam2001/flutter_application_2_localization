@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2_localization/shopping_page/shopping_page.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_application_2_localization/shopping_page/shopping_page.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -40,7 +41,7 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping App'),
+        title: Text(tr("app_bar_title")),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -52,7 +53,7 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               children: [
                 Image.asset(
-                  "assets/shopping.png",
+                  "assets/images/shopping.png",
                   height: 100,
                 ),
           
@@ -62,15 +63,15 @@ class _SignUpState extends State<SignUp> {
                     controller: nameController,
                     validator: (value) {
                       if (value == null) {
-                        return "Full Name is required";
+                        return tr("full_name_required");
                       }
                       else if(value[0] != value[0].toUpperCase()) {
-                        return "First Character of Full Name should be Capital";
+                        return tr("full_name_error");
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      labelText: "Full Name",
+                      labelText: tr("full_name_title"),
                     )
                   ),
                 ),
@@ -81,15 +82,15 @@ class _SignUpState extends State<SignUp> {
                     controller: emailController,
                     validator: (value) {
                       if (value == null) {
-                        return "Email is required";
+                        return tr("email_required");
                       }
                       else if(!value.contains("@")) {
-                        return "Enter a valid Email Address";
+                        return tr("email_error");
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      labelText: "Email",
+                      labelText: tr("email_title"),
                     )
                   ),
                 ),
@@ -101,15 +102,15 @@ class _SignUpState extends State<SignUp> {
                     obscureText: hiddenPassword1,
                     validator: (value) {
                       if (value == null) {
-                        return "Password is required";
+                        return tr("password_required");
                       }
                       else if (value.length < 6) {
-                        return "Password should be at least 6 characters";
+                        return tr("password_error");
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      labelText: "Password",
+                      labelText: tr("password_title"),
                       suffixIcon: IconButton(
                         onPressed: togglePassword1, 
                         icon: Icon(hiddenPassword1? Icons.visibility_off : Icons.visibility),
@@ -125,15 +126,15 @@ class _SignUpState extends State<SignUp> {
                     obscureText: hiddenPassword2,
                     validator: (value) {
                       if (value == null) {
-                        return "Confirm Password is required";
+                        return tr("confirm_password_required");
                       }
                       else if (passController.text != value) {
-                        return "Passwords should be identical";
+                        return tr("confirm_password_error");
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      labelText: "Confrim Password",
+                      labelText: tr("confirm_password_title"),
                       suffixIcon: IconButton(
                         onPressed: togglePassword2, 
                         icon: Icon(hiddenPassword2? Icons.visibility_off : Icons.visibility),
@@ -156,7 +157,7 @@ class _SignUpState extends State<SignUp> {
                     }
                     else {
                       SnackBar snackBar = SnackBar(
-                        content: Text("Error in input fields"),
+                        content: Text(tr("error_input")),
                         duration: Duration(seconds: 2),
                         action: SnackBarAction(
                           label: "ok",
@@ -167,13 +168,24 @@ class _SignUpState extends State<SignUp> {
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     }
                   },
-                  child: const Text("Sign Up"),
+                  child: Text(tr("sign_up")),
                 )
               ]
             )
           )
         ),
       ),
+
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.language),
+        onPressed: () {
+          if (context.locale == Locale("ar", "EG")) {
+            context.setLocale(Locale("en", "US"));
+          }
+          else {
+            context.setLocale(Locale("ar", "EG"));
+          }
+        }),
     );
   }
 
@@ -183,17 +195,17 @@ class _SignUpState extends State<SignUp> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Login'),
-          content: const SingleChildScrollView(
+          title: Text(tr("sign_up")),
+          content: SingleChildScrollView(
             child: ListBody(
-              children: <Widget>[
-                Text('Account created successfully.'),
+              children: [
+                Text(tr("create_account")),
               ],
             ),
           ),
           actions: <Widget>[
             TextButton(
-              child: const Text('Close'),
+              child: Text(tr("close")),
               onPressed: () {
                 setState(() { // page transistion for sign up page
                   _visible = !_visible;

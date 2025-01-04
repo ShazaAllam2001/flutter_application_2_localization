@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HotOffers extends StatefulWidget {
   const HotOffers({super.key});
@@ -9,11 +10,11 @@ class HotOffers extends StatefulWidget {
 
 class HotOffersState extends State<HotOffers> {
   final List<String> offerImages = [
-    'assets/dress.jpg',
-    'assets/camera.jpg',
-    'assets/phone.jpg',
-    'assets/shirt.jfif',
-    'assets/pants.jfif',
+    'assets/images/dress.jpg',
+    'assets/images/camera.jpg',
+    'assets/images/phone.jpg',
+    'assets/images/shirt.jfif',
+    'assets/images/pants.jfif',
   ];
 
   @override
@@ -24,7 +25,7 @@ class HotOffersState extends State<HotOffers> {
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: Text(
-            'Hot Offers', // 'Our Products' Text
+            tr("hot_offers"),
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
@@ -52,7 +53,7 @@ class HotOffersState extends State<HotOffers> {
                         child: Padding(
                           padding: EdgeInsets.all(5.0),
                           child: Text(
-                            'Offer ${index + 1}',
+                            tr("offer") + (index + 1).toString(),
                             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
                           ),
                         ),

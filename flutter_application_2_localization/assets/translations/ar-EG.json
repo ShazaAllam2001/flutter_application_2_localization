@@ -1,0 +1,26 @@
+{
+    "app_bar_title": "تطبيق التسوق",
+
+    "full_name_title": "الاسم الكامل",
+    "full_name_required": "الاسم الكامل مطلوب",
+    "full_name_error": "",
+    "email_title": "البريد الإلكتروني",
+    "email_required": "البريد الإلكتروني مطلوب",
+    "email_error": "أدخل بريد إلكتروني صحيح",
+    "password_title": "كلمة المرور",
+    "password_required": "كلمة المرور مطلوبة",
+    "password_error": "كلمة المرور يجب أن تكون من أكثر من 6 أحرف",
+    "confirm_password_title": "تأكيد كلمة المرور",
+    "confirm_password_required": "مطلوب تأكيد كلمة المرور",
+    "confirm_password_error": "كلمة المرور يجب أن تكون متطابقة",
+    "sign_up": "تسجيل حساب",
+    "create_account": "تم إنشاء الحساب بنجاح",
+    "close": "إغلاق",
+    "error_input": "خطأ في المدخلات",
+
+    "products": "منتجاتنا",
+    "product": "منتج",
+    "item_added": "تم إضافة المنتج للسلة",
+    "offer": "عروض",
+    "hot_offers": "عروض لا تفوت"
+}
